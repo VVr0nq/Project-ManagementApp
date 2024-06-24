@@ -902,6 +902,11 @@ html.dark {
   color: rgb(155 155 155 / var(--tw-text-opacity));
 }
 .material-icons{
+  color: black
+
+}
+
+.material-icons2{
   color: red;
 
 }
