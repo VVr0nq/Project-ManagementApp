@@ -1,0 +1,25 @@
+{
+  "name": "projecttype",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.19",
+    "dotenv": "^16.4.5",
+    "firebase": "^10.12.2",
+    "node-fetch": "^3.3.2",
+    "npm": "^10.5.2",
+    "postcss": "^8.4.38",
+    "rxjs": "^7.8.1"
+  }
+}
