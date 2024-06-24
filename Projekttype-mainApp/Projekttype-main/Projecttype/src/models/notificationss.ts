@@ -1,10 +1,10 @@
 export type ISOString = string;
 
-export type Notification = {
-  id: string;
-  title: string;
-  message: string;
-  date: ISOString;
-  priority: "low" | "medium" | "high";
-  read: boolean;
-};
+export interface Notification {
+    id: string;
+    message: string;
+    date: string;
+    priority: "low" | "medium" | "high";
+    title: string;
+    read: boolean;
+  }

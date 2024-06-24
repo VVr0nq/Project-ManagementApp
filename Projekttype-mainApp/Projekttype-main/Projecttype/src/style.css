@@ -837,7 +837,15 @@ video {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
-
+.text-xs {
+  color: rgb(3, 3, 3);
+}
+.text-xd {
+  color: red;
+}
+.text-xdd {
+  color: green;
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -892,6 +900,10 @@ html.dark {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(155 155 155 / var(--tw-text-opacity));
+}
+.material-icons{
+  color: red;
+
 }
 
 :root {
