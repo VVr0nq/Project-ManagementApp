@@ -13,18 +13,52 @@ import { loginView } from "./views/loginview.ts";
 import { NotificationService } from "./services/notifcations.ts";
 import { Notification } from "./models/notificationss.ts";
 
-const notificationService = new NotificationService();
 const users: User[] = [];
 const userManager = new UserSessionManager();
 users.push(...mockUsers());
+const notificationService = new NotificationService();
+
+function showNotification(message: string) {
+  const notification = document.createElement('div');
+  notification.className = 'notification';
+  notification.innerText = message;
+
+  // Append notification to body
+  document.body.appendChild(notification);
+
+  // Center the notification
+  notification.style.position = 'fixed';
+  notification.style.top = '50%';
+  notification.style.left = '50%';
+  notification.style.transform = 'translate(-50%, -50%)';
+
+  // Remove notification after 3 seconds
+  setTimeout(() => {
+    document.body.removeChild(notification);
+  }, 3000);
+}
+
+// CSS for notification (Include this in your CSS file or style block)
+const style = document.createElement('style');
+style.innerHTML = `
+.notification {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000; // Ensure it appears above other content
+}
+`;
+document.head.appendChild(style);
 
 export async function refreshProjects() {
   const Projects = await getAllProjects();
   const appDiv = document.querySelector<HTMLDivElement>("#app");
   if (appDiv) {
     appDiv.innerHTML = `
-          <h1 class="text-2xl font-bold mb-4 text-center">Project Manager App</h1>
-        </div>
+          <div class="title-container">
+  <h1 class="app-title text-4xl font-bold mb-4 text-center bg-green-500 text-white rounded-lg p-4">Project Manager App</h1>
+</div>
         ${loginView(userManager)}
         <div class="flex justify-center mb-4">
         <button class="addBtn bg-purple-500 text-white py-1 px-4">Add Project</button>
@@ -37,6 +71,7 @@ export async function refreshProjects() {
         </label>
         <div id="notification-icon" class="relative cursor-pointer ml-4">
           <span class="material-icons">notifications</span>
+           <span id="unread-count" class="absolute top-0 right-0 bg-red-500 text-white  px-2 hidden rounded-full">0</span>
         </div>
       </div>
         <div class="projectContainer flex-col flex ">

@@ -6,7 +6,6 @@ import { refreshProjects } from "../main";
 import { Project } from "../models/project";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 import { app } from "../firebase";
-import { UserRole } from "../models/user";
 
 export function renderStories(
   project: Project,
@@ -36,18 +35,16 @@ export function renderStories(
 
     querySnapshot.forEach((doc) => {
       const userData = doc.data();
-       {
-        const option = document.createElement("option");
-        option.value = JSON.stringify({
-          id: userData.id,
-          firstName: userData.firstName,
-          lastName: userData.lastName,
-          role: userData.role,
-        });
+      const option = document.createElement("option");
+      option.value = JSON.stringify({
+        id: userData.id,
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        role: userData.role,
+      });
 
-        option.textContent = userData.firstName + " (" + userData.role + ")";
-        userAssignedDropdown.appendChild(option);
-      }
+      option.textContent = userData.firstName + " (" + userData.role + ")";
+      userAssignedDropdown.appendChild(option);
     });
   }
 

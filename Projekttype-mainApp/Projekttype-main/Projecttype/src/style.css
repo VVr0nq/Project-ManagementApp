@@ -902,7 +902,7 @@ html.dark {
   color: rgb(155 155 155 / var(--tw-text-opacity));
 }
 .material-icons{
-  color: black
+  color: black and white
 
 }
 
@@ -910,7 +910,34 @@ html.dark {
   color: red;
 
 }
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.dialog-content p {
+  margin-bottom: 20px;
+}
+
+.hidden {
+  display: none;
+}
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.app-title {
+  font-size: 2rem; /* or use a larger value if needed */
+  background-color: #38a169; /* Tailwind green-500 color */
+  color: white;
+  border-radius: 0.5rem; /* rounded corners */
+  padding: 1rem; /* spacing around the text */
+  text-align: center;
+  margin-bottom: 1rem;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
