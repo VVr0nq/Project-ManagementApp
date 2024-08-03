@@ -20,7 +20,7 @@ Project Management App is a TypeScript-based application designed to streamline 
    cd Project-ManagementApp
    npm install
    npm start
-
+   
 ## **Usage**
 - **Log in or Create an Account:** Access the app by logging in or signing up.
 - **Create a New Project:** Initiate projects and add tasks.
